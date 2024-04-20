@@ -10,8 +10,8 @@ services:
     hostname: proxy_server
     container_name: proxy
     build:
-        context: .
-        dockerfile: ./Dockerfile
+        context: ./
+        dockerfile: Dockerfile
     stdin_open: true
     tty: true
     ports:

@@ -10,8 +10,8 @@ services:
     hostname: rtmp_server
     container_name: rtmp
     build:
-        context: .
-        dockerfile: ./rtmp.Dockerfile
+        context: ./rtmp
+        dockerfile: Dockerfile
     stdin_open: true
     tty: true
     ports:
@@ -19,21 +19,20 @@ services:
       - 8000:80
     networks:
       - my-bridge-network
-    volumes:
-      - "./rtmp:/rtmp"
   
   # proxy
   proxy:
     hostname: proxy_server
     container_name: proxy
     build:
-        context: .
-        dockerfile: ./proxy.Dockerfile
+        context: ./proxy
+        dockerfile: Dockerfile
     stdin_open: true
     tty: true
     ports:
       - 1936:1936
+    environment:
+      NGINX_ENVSUBST_OUTPUT_DIR: /etc/nginx
+      REMOTE_RTMP_SERVER: "127.0.0.1:1936"      
     networks:
       - my-bridge-network
-    volumes:
-      - "./proxy:/proxy"
