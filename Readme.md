@@ -1,1 +1,1 @@
-![MSC](./msc.png)
+![MSC](./msc.png){: width="500"}

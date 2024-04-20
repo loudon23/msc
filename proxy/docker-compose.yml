@@ -1,0 +1,25 @@
+version: '3'
+
+networks:
+  my-bridge-network:
+    driver: bridge
+
+services:
+  # proxy
+  proxy:
+    hostname: proxy_server
+    container_name: proxy
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    stdin_open: true
+    tty: true
+    ports:
+      - 1936:1936
+    environment:
+      NGINX_ENVSUBST_OUTPUT_DIR: /etc/nginx
+      REMOTE_RTMP_SERVER: "127.0.0.1:1936"
+    networks:
+      - my-bridge-network
+    volumes:
+      - "./proxy:/proxy"

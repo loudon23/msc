@@ -1,0 +1,21 @@
+version: '3'
+
+networks:
+  my-bridge-network:
+    driver: bridge
+
+services:
+  # rtmp 
+  rtmp:
+    hostname: rtmp_server
+    container_name: rtmp
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    stdin_open: true
+    tty: true
+    ports:
+      - 1935:1935
+      - 8000:80
+    networks:
+      - my-bridge-network
