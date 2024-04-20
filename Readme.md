@@ -5,6 +5,10 @@
 * [nginx conf with env vars](https://github.com/filipkrw/nginx-conf-with-env-vars/tree/main)
 * [aws ec2 docker](https://sjh9708.tistory.com/100)
 * [private access token으로 git clone 하기](https://velog.io/@ashappyasikonw/Private-Access-Token%EC%9C%BC%EB%A1%9Cgit-clone-%ED%95%98%EA%B8%B0)
+* git
+    ```
+    git config --global url."https://{privatekey}:x-oauth-basic@github.com/{저장소}".insteadOf "https://github.com/{저장소}"
+    ```
 * docker command
     ```
     docker container ls
