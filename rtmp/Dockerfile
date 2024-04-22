@@ -4,7 +4,7 @@ RUN apt update -y
 RUN apt install ffmpeg net-tools -y
 
 RUN mkdir /rtmp
-COPY ./*.* /rtmp
+COPY ./*.* /rtmp/
 
 WORKDIR /rtmp
 RUN npm i
