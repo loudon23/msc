@@ -5,6 +5,6 @@ RUN apt install procps net-tools -y
 
 COPY ./nginx.conf /etc/nginx/templates/nginx.conf.template
 
-EXPOSE 1935
+EXPOSE 1936
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
