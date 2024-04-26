@@ -28,13 +28,13 @@ $ docker-compose up -d
 ```
 
 ## 송출
-* EC2 인바운드 규칙: 1935, 8000 열어야 함.
-* RTMP 주소 : rtmp://{ec2_public_ip}/live
-* RTMP 키 : 아무거나(본인의ID 같은거)
+* **EC2 인바운드 규칙: 1935, 8000 열어야 함.**
+* RTMP 주소 : `rtmp://{ec2_public_ip}/live`
+* RTMP 키 : `아무거나(본인의ID 같은거)`
 
 ## 시청 
-* dash : http://{ec2_public_ip}:8000/live/{RTMP키}/index.mpd
-* hls : http://{ec2_public_ip}:8000/live/{RTMP키}/index.m3u8
+* dash : `http://{ec2_public_ip}:8000/live/{RTMP키}/index.mpd`
+* hls : `http://{ec2_public_ip}:8000/live/{RTMP키}/index.m3u8`
 
 
 ## 참고
